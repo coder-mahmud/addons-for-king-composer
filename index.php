@@ -34,7 +34,36 @@ Version: 1.0
                             "value"       => "",
                         ),
 
-                        
+                         array(
+                            'name' => 'show_first_name',
+                            'label' => 'Show First Name',
+
+                            'type' => 'radio',  // USAGE RADIO TYPE
+                            'options' => array(    // REQUIRED
+                                'option_1' => 'Yes',
+                                'option_2' => 'No'
+                            ),
+
+
+
+                        ),
+
+
+                         array(
+                            'name' => 'show_last_name',
+                            'label' => 'Show Last Name',
+
+                            'type' => 'radio',  // USAGE RADIO TYPE
+                            'options' => array(    // REQUIRED
+                                'option_1' => 'Yes',
+                                'option_2' => 'No'
+                            ),
+
+
+                        ),
+
+
+
                         array(
                             "type" => "select",
                             "label" => __("Select Style", "kingcomposer"),
@@ -295,7 +324,11 @@ Version: 1.0
                 ob_start(); 
 
                 ?>
+                <?php
+                    // Play ground
+                print_r( $show_first_name);
 
+                ?>
                 
 
 
