@@ -43,9 +43,6 @@ Version: 1.0
                                 'option_1' => 'Yes',
                                 'option_2' => 'No'
                             ),
-
-
-
                         ),
 
 
@@ -58,12 +55,40 @@ Version: 1.0
                                 'option_1' => 'Yes',
                                 'option_2' => 'No'
                             ),
+                        ),
 
+                        array(
+                            'name' => 'form_bg',
+                            'label' => 'Form Background Color',
+                            'type' => 'color_picker',
+                        ),
 
+                        array(
+                            'name' => 'title_color',
+                            'label' => 'Title Text Color',
+                            'type' => 'color_picker',
+                        ),
+
+                        array(
+                            'name' => 'sub_title_color',
+                            'label' => 'Field Label Color',
+                            'type' => 'color_picker',
+                        ),
+
+                        array(
+                            'name' => 'btn_color',
+                            'label' => 'Submit Button Text Color',
+                            'type' => 'color_picker',
+                        ),
+
+                        array(
+                            'name' => 'btn_bg',
+                            'label' => 'Submit Button Background Color',
+                            'type' => 'color_picker',
                         ),
 
 
-
+/*
                         array(
                             "type" => "select",
                             "label" => __("Select Style", "kingcomposer"),
@@ -222,7 +247,9 @@ Version: 1.0
                             "label" => __("Extra class name", "kingcomposer"),
                             "name" => "extraclass",
                             "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", "kingcomposer")
-                        ),                     
+                        ),
+
+                        */                     
                         
                     ),                
                 
@@ -289,9 +316,17 @@ Version: 1.0
             
             function cwp_infobox_shortcode_function( $atts, $content = null, $tag ) {
                 extract( shortcode_atts( array(
-                    'style'    => '',
-                    'display_as'    => '',
-                    'icon_type'       => '',
+                    'show_first_name'    => '',
+                    'show_last_name'    => '',
+                    'title' => 'Title Here',
+                    'form_bg'       => '',
+                    'title_color'       => '',
+                    'sub_title_color'       => '',
+                    'btn_color'       => '',
+                    'btn_bg'       => '',
+
+
+
                     'icon'            => '',
                     'icon_image'      => '',
                     'icon_fontawesome' => '',
@@ -300,7 +335,6 @@ Version: 1.0
                     'icon_border_color' => '#343434',
                     'icon_bg_color' => '#ffffff',
                     'icon_hover_color' => '#1293d4',
-                    'title' => 'Title Here',
                     'content' => '',
                     'on_click' => '',
                     'link' => '',
@@ -321,12 +355,15 @@ Version: 1.0
                 $link    = kc_parse_link($link);
                 
                 $output ='';
+
+                //echo $show_first_name;
+                print_r($form_bg);
                 ob_start(); 
 
                 ?>
                 <?php
                     // Play ground
-                print_r( $show_first_name);
+                
 
                 ?>
                 
@@ -334,7 +371,15 @@ Version: 1.0
 
                 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
                 <style type="text/css">
-                    #mc_embed_signup{background:rgba(255,255,255,.5) !important; clear:left; font:14px Helvetica,Arial,sans-serif; }<br />  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.<br />       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */<br />       .mc-field-group{display:block; width:100%; clear:both;}<br />       .mce_inline_error{display:block; width:100%; clear:both;}<br />     .button{background-color:#4A4A4A; color:#F9F3E5}<br />      #mc_embed_signup .mc-field-group input[type="text"]{color:#000 !important}<br />    #mc_embed_signup .mc-field-group input[type = "email"]{color:#000 !important}<br />
+                    #mc_embed_signup{background-color:<?php echo $form_bg; ?> !important; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.<br />       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                    .mc-field-group{display:block; width:100%; clear:both;}
+                    .mce_inline_error{display:block; width:100%; clear:both;}
+                    .button{background-color:#4A4A4A; color:#F9F3E5}
+                    #mc_embed_signup .mc-field-group input[type="text"]{color:#000 !important}
+                    #mc_embed_signup .mc-field-group input[type = "email"]{color:#000 !important}
+                    #mc_embed_signup .mc-field-group{padding-bottom: 0;}
+                    #mc_embed_signup .button{margin-top: 20px; background:<?php echo $btn_bg; ?>; color:<?php echo $btn_color; ?>;}
                 </style>
 
                 <div id="mc_embed_signup">
@@ -343,22 +388,31 @@ Version: 1.0
 
                         <div id="mc_embed_signup_scroll">
                            
-                            <h2><?php echo $title; ?></h2>
+                            <h2 style="color:<?php echo $title_color; ?>"><?php echo $title; ?></h2>
+
+                            <?php if($show_first_name == 'option_1'){ ?>
+                                <div class="mc-field-group">
+                                    <label style="color:<?php echo $sub_title_color; ?>" for="mce-FNAME">First Name </label>
+                                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Your First Name">
+                                </div>
+
+                           <?php }?>
+
+                            <?php if($show_last_name == 'option_1'){ ?>
+                                <div class="mc-field-group">
+                                   <label style="color:<?php echo $sub_title_color; ?>" for="mce-LNAME">Last Name </label>
+                                   <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Your Last Name">
+                                </div>
+                           <?php }?>
 
                             <div class="mc-field-group">
-                                <label for="mce-FNAME">First Name </label>
-                                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                                <label style="color:<?php echo $sub_title_color; ?>" for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label> 
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email">
                             </div>
 
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label> 
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            </div>
 
-                            <div class="mc-field-group">
-                               <label for="mce-LNAME">Last Name </label>
-                               <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-                            </div>
+
+
 
                             <div id="mce-responses" class="clear">
                             <div class="response" id="mce-error-response" style="display:none"></div>
