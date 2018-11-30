@@ -1,21 +1,14 @@
 <?php
-/*
-Plugin Name: KC Addons for Mailchimp
-Plugin URI: https://coderwp.com/plugins/
-Description: A addon for adding mailchimp form
-Author: Mahmudul Hasan
-Version: 1.0
-*/
 
 
-    add_action('init', 'cwp_infobox_shortcode_init', 99 );
+    add_action('init', 'cwp_kc_mailchimp_shortcode_init', 99 );
      
-    function cwp_infobox_shortcode_init(){
+    function cwp_kc_mailchimp_shortcode_init(){
             
     global $kc;
     $kc->add_map(
         array(
-            'akc_infobox' => array(
+            'cwp_mailchimp' => array(
                 'name' => 'Mailchimp',
                 'description' => __('info box shortcode', 'kingcomposer'),
                 'icon' => 'akc_infobox_icon',
@@ -314,7 +307,7 @@ Version: 1.0
             
             
             
-            function cwp_infobox_shortcode_function( $atts, $content = null, $tag ) {
+            function cwp_mailchimp_shortcode_function( $atts, $content = null, $tag ) {
                 extract( shortcode_atts( array(
                     'show_first_name'    => '',
                     'show_last_name'    => '',
@@ -440,4 +433,4 @@ Version: 1.0
             }
 
 
-            add_shortcode( 'akc_infobox', 'cwp_infobox_shortcode_function' );
+            add_shortcode( 'cwp_mailchimp', 'cwp_mailchimp_shortcode_function' );
