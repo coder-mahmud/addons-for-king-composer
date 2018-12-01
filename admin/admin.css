@@ -1,0 +1,12 @@
+
+
+.cwp_infobox_icon {
+    background-image: url(img/beforeafter_icon.png) !important;
+    background-position: center center;
+    background-size: 50px auto !important;
+}
+.cwp_mailchimp_icon {
+    background-image: url(img/mail_icon.png) !important;
+    background-position: center center;
+    background-size: 50px auto !important;
+}

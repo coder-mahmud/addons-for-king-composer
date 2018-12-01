@@ -11,7 +11,7 @@
             'cwp_mailchimp' => array(
                 'name' => 'Mailchimp',
                 'description' => __('info box shortcode', 'kingcomposer'),
-                'icon' => 'akc_infobox_icon',
+                'icon' => 'cwp_mailchimp_icon',
                 'css_box' => true,
                 'category' => 'Addons KingComposer',
                 'params' => array(

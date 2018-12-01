@@ -17,11 +17,11 @@ if(!function_exists('is_plugin_active')){
 
 
 // Admin Style CSS
-function akc_admin_enqeue() {
+function cwp_kc_admin_enqeue() {
     
-    wp_enqueue_style( 'akc_admin_css', plugins_url( 'admin/admin.css', __FILE__ ) );
+    wp_enqueue_style( 'cwp_admin_css', plugins_url( 'admin/admin.css', __FILE__ ) );
 }
-add_action( 'admin_enqueue_scripts', 'akc_admin_enqeue' );
+add_action( 'admin_enqueue_scripts', 'cwp_kc_admin_enqeue' );
 
 
 if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
