@@ -1,6 +1,5 @@
 <?php
 
-
     add_action('init', 'cwp_kc_iconbox_shortcode_init', 101 );
      
     function cwp_kc_iconbox_shortcode_init(){
@@ -26,6 +25,7 @@
                             "name"  => "text",
                             "value"       => "",
                         ),
+
                         array(
                             'type' => 'icon_picker',
                             'label' => __( 'Icon', 'kingcomposer' ),
@@ -47,7 +47,14 @@
                        
                         array(
                             'name' => 'hover_color',
-                            'label' => 'Icon & Text Hover Color',
+                            'label' => 'Hover Color',
+                            'type' => 'color_picker',
+                        ),
+
+                       
+                        array(
+                            'name' => 'bdr_color',
+                            'label' => 'Boder Color',
                             'type' => 'color_picker',
                         ),
 
@@ -69,7 +76,8 @@
                     'icon_fontawesome'    => '',
                     'text'    => '',
                     'color' => '',
-                    'hover_color'       => '',
+                    'hover_color' => '',
+                    'bdr_color' => '',
                     
                 ), $atts ) );
                 
@@ -78,38 +86,34 @@
                 wp_enqueue_style( 'inconbox-css' );
                 
                 $icon_image = wp_get_attachment_image_src( $icon_image, 'full' );
-                $link    = kc_parse_link($link);
+                $link = kc_parse_link($link);
 
 
                 //echo $show_first_name;
-                //print_r($icon_fontawesome);
+                //print_r($hover_color);
                 ob_start(); 
 
                 ?>
-                <?php
-                    // Play ground
-                
 
-                ?>
                 <style>
-                    .icon_box{border:1px solid <?php echo $color; ?>; text-align: center; border-radius: 5px; padding: 50px 0;}
-                    .icon_box i{font-size: 50px; line-height: 50px; color:<?php echo $color; ?>;}
+                    .icon_box{ text-align: center; border-radius: 5px; }
+                    .icon_box i{font-size: 50px; line-height: 50px;}
                     .icon_box .text{font-size: 25px; color:#0fe1cb;}
-                    .icon_box:hover .text,.icon_box:hover i{color:#0db7a5;}
-                    .icon_box:hover{border:1px solid #0db7a5;}
                 </style>
 
 
+                <div style="border:1px solid <?php echo $bdr_color ?>;" onMouseOver="this.style.borderColor='<?php echo $hover_color; ?>'" class="icon_box">
+                    <div style = "color:<?php echo $color; ?>" class="hover_wrapper" onMouseOver="this.style.backgroundColor='<?php echo $hover_color; ?>'"  onMouseOut="this.style.backgroundColor='unset'">
+                        
+                        <i style="color:'.$color.'" class="<?php echo  $icon_fontawesome ?>"></i>
+                        <p class="text">asdfsadfa asdfasdf asd</p>
+                    </div>
 
-
-                <div class="icon_box">
-                    <i class="<?php echo $icon_fontawesome; ?>"></i>
-                    <p class="text">asdfsadfa asdfasdf asd</p>
                 </div>
 
-            <?php
 
-            return ob_get_clean();
+                <?php
+                return ob_get_clean();
 
             }
 

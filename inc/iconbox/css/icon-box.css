@@ -1,5 +1,10 @@
-                    .icon_box{border:1px solid <?php echo $color; ?>; text-align: center; border-radius: 5px; padding: 50px 0;}
-                    .icon_box i{font-size: 50px; line-height: 50px; color:<?php echo $color; ?>;}
-                    .icon_box .text{font-size: 25px; color:#0fe1cb;}
-                    .icon_box:hover .text,.icon_box:hover i{color:#0db7a5;}
-                    .icon_box:hover{border:1px solid #0db7a5;}
+.icon_box{}
+.icon_box:hover{}
+.icon_box i{font-size: 50px; line-height: 50px;}
+.icon_box .text{font-size: 25px; color:#0fe1cb;}
+.icon_box:hover{border:1px solid #0db7a5;}
+
+
+.hover_wrapper{padding: 50px 0; position: relative; /* background-color:red; */ }
+.icon_box .hover_wrapper:hover{}                
+.hover_wrapper:hover i{color:#fff !important;}                    

@@ -31,10 +31,10 @@ if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
 } 
 
 
-add_action( 'admin_init', 'akc_required_plugin' );
-function akc_required_plugin() {
+add_action( 'admin_init', 'cwp_kc_required_plugin' );
+function cwp_kc_required_plugin() {
     if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'kingcomposer/kingcomposer.php' ) ) {
-        add_action( 'admin_notices', 'akc_required_plugin_notice' );
+        add_action( 'admin_notices', 'cwp_kc_required_plugin_notice' );
 
         deactivate_plugins( plugin_basename( __FILE__ ) ); 
 
@@ -44,7 +44,7 @@ function akc_required_plugin() {
     }
 }
 
-function akc_required_plugin_notice(){
+function cwp_kc_required_plugin_notice(){
     ?><div class="error"><p>Error! you need to install and activate the <a href="https://wordpress.org/plugins/kingcomposer/">King Composer</a> plugin to run this plugin.</p></div><?php
 }
 ?>
