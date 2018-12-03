@@ -10,3 +10,8 @@
     background-position: center center;
     background-size: 50px auto !important;
 }
+.cwp_testimonial_icon {
+    background-image: url(img/testimonial.png) !important;
+    background-position: center center;
+    background-size: 50px auto !important;
+}

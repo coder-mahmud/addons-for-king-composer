@@ -4,6 +4,7 @@ Plugin Name: KC Addons (Mailchimp, icon box etc)
 Plugin URI: https://coderwp.com/plugins/
 Description: A addon for adding mailchimp form
 Author: Mahmudul Hasan
+Author URI: https://coderwp.com/
 Version: 1.0
 */
 
