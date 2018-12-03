@@ -126,7 +126,7 @@
                     <div style = "color:<?php echo $color; ?>" class="hover_wrapper" onMouseOver="this.style.backgroundColor='<?php echo $hover_color; ?>'"  onMouseOut="this.style.backgroundColor='unset'">
                         
                         <i style="color:<?php echo $color; ?>" class="<?php echo  $icon_fontawesome ?>"></i>
-                        <p style="color:<?php echo $text_color; ?>; font-size:<?php echo $text_fz.'px'; ?> " class="text"><?php echo $text; ?></p>
+                        <h3 style="color:<?php echo $text_color; ?>; font-size:<?php echo $text_fz.'px'; ?> " class="text"><?php echo $text; ?></h3>
                     </div>
 
                 </div>

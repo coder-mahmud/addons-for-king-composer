@@ -1,7 +1,7 @@
 .icon_box{}
 .icon_box:hover{}
 .icon_box i{font-size: 50px; line-height: 50px;}
-.icon_box .text{margin-top: 25px;}
+.icon_box .text{margin-top: 25px; margin-left: 0; margin-right: 0;}
 .icon_box:hover .text{color:#fff !important;}
 
 
