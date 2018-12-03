@@ -1,0 +1,14 @@
+.testimonial_wrapper{display: block; overflow: hidden; position: relative; margin-top: 25px; border:1px solid #ddd; border-radius: 5px; padding:15px;}
+.testimonial_wrapper .img_holder img{max-width: 200px !important; height:auto; border-radius: 50%; margin-bottom: 25px !important;}
+
+.testimonial_wrapper .text_holder{max-width: 70%; margin:0 auto; text-align: right;}
+.testimonial_wrapper .text_holder .quote{font-size: 18px; text-align: justify;}
+.testimonial_wrapper .text_holder .name{width: 100% !important; text-align: right; font-size: 15px;}
+.testimonial_wrapper .text_holder .designation{width: 100% !important; text-align: right; font-size: 15px;}
+.testimonial_wrapper p{display: block; clear: both;}
+
+
+@media only screen  and (max-width: 767px) {
+	.testimonial_wrapper .text_holder{max-width: 100%;}
+	
+}

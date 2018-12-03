@@ -44,6 +44,8 @@ function cwp_kc_required_plugin() {
     }
 }
 
+add_image_size( 'client_image', 200, 200, true );
+
 function cwp_kc_required_plugin_notice(){
     ?><div class="error"><p>Error! you need to install and activate the <a href="https://wordpress.org/plugins/kingcomposer/">King Composer</a> plugin to run this plugin.</p></div><?php
 }
