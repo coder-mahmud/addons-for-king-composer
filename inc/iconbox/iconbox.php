@@ -23,7 +23,14 @@
                             "type"        => "text",
                             "label"     => __( "Text", 'kingcomposer' ),
                             "name"  => "text",
-                            "value"       => "",
+                            "value"       => "Some Text Here",
+                        ),
+
+                        array(
+                            "type"        => "number_slider",
+                            "label"     => __( "Text font size", 'kingcomposer' ),
+                            "name"  => "text_fz",
+                            "value"       => "25",
                         ),
 
                         array(
@@ -40,8 +47,17 @@
 
                         array(
                             'name' => 'color',
-                            'label' => 'Icon & Text Color',
+                            'label' => 'Icon Color',
                             'type' => 'color_picker',
+                            "value" => "#CFCFCF",
+                        ),
+
+                       
+                        array(
+                            'name' => 'text_color',
+                            'label' => 'Text Color',
+                            'type' => 'color_picker',
+                            "value" => "#656464",
                         ),
 
                        
@@ -49,6 +65,7 @@
                             'name' => 'hover_color',
                             'label' => 'Hover Color',
                             'type' => 'color_picker',
+                            'value' => '#1E73BE',
                         ),
 
                        
@@ -56,6 +73,7 @@
                             'name' => 'bdr_color',
                             'label' => 'Boder Color',
                             'type' => 'color_picker',
+                            "value" => "#CFCFCF",
                         ),
 
 
@@ -77,7 +95,9 @@
                     'text'    => '',
                     'color' => '',
                     'hover_color' => '',
-                    'bdr_color' => '',
+                    'bdr_color' => '#ddd',
+                    'text_fz' => '',
+                    'text_color' => '',
                     
                 ), $atts ) );
                 
@@ -102,11 +122,11 @@
                 </style>
 
 
-                <div style="border:1px solid <?php echo $bdr_color ?>;" onMouseOver="this.style.borderColor='<?php echo $hover_color; ?>'" class="icon_box">
+                <div style="border:1px solid <?php echo $bdr_color ?>;" onMouseOver="this.style.borderColor='<?php echo $hover_color; ?>'" onMouseOut="this.style.borderColor='<?php echo $bdr_color; ?>'" class="icon_box">
                     <div style = "color:<?php echo $color; ?>" class="hover_wrapper" onMouseOver="this.style.backgroundColor='<?php echo $hover_color; ?>'"  onMouseOut="this.style.backgroundColor='unset'">
                         
-                        <i style="color:'.$color.'" class="<?php echo  $icon_fontawesome ?>"></i>
-                        <p class="text">asdfsadfa asdfasdf asd</p>
+                        <i style="color:<?php echo $color; ?>" class="<?php echo  $icon_fontawesome ?>"></i>
+                        <p style="color:<?php echo $text_color; ?>; font-size:<?php echo $text_fz.'px'; ?> " class="text"><?php echo $text; ?></p>
                     </div>
 
                 </div>

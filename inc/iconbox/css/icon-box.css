@@ -1,8 +1,8 @@
 .icon_box{}
 .icon_box:hover{}
 .icon_box i{font-size: 50px; line-height: 50px;}
-.icon_box .text{font-size: 25px; color:#0fe1cb;}
-.icon_box:hover{border:1px solid #0db7a5;}
+.icon_box .text{margin-top: 25px;}
+.icon_box:hover .text{color:#fff !important;}
 
 
 .hover_wrapper{padding: 50px 0; position: relative; /* background-color:red; */ }
