@@ -78,225 +78,9 @@
                             'name' => 'btn_bg',
                             'label' => 'Submit Button Background Color',
                             'type' => 'color_picker',
-                        ),
-
-
-/*
-                        array(
-                            "type" => "select",
-                            "label" => __("Select Style", "kingcomposer"),
-                            "name" => "style",
-                            'options' => array(
-                                'style-1'  => 'Style 1',
-                                'style-2'  => 'Style 2',
-                                'style-3'  => 'Style 3',
-                                'style-4'  => 'Style 4',
-                                'style-5'  => 'Style 5',
-                                'style-6'  => 'Style 6',
-                            ),                        
-                            "value" => "style-1",
-                            "admin_label" => true,
-                            "description" => __("", "kingcomposer")
-                        ),
+                        ),  
                         
-                        array(
-                            'type' => 'select',
-                            'label' => __( 'Display Icon as', 'kingcomposer' ),
-                            'name' => 'display_as',
-                            'options' => array(
-                                'circle'  => 'Circle',
-                                'square'  => 'Square',
-                            ),                        
-                            "value" => "circle",
-                            'relation' => array(
-                                'parent' => 'style',
-                                'show_when' => 'style-6',
-                            ),                        
-                        ),
-                                            
-                        array(
-                            "type" => "select",
-                            "label" => __("Icon Type", "kingcomposer"),
-                            "name" => "icon_type",
-                            'options' => array(
-                                'icon'  => 'Icon (select the icon below)',
-                                'image'  => 'Image (choose the icon image below)',
-                            ),                        
-                            "value" => "icon",
-                            "description" => __("", "kingcomposer")
-                        ),                   
-                        array(
-                            "type" => "attach_image",
-                            "label" => __("Icon Image", "asvc"),
-                            "name" => "icon_image",
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'image',
-                            ),                        
-                            "description" => __("Select image from media library.", "kingcomposer")
-                        ),                    
-                                           
-                        array(
-                            'type' => 'icon_picker',
-                            'label' => __( 'Icon', 'kingcomposer' ),
-                            'name' => 'icon_fontawesome',
-                            'value' => 'fa fa-camera',
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'icon',
-                            ),
-                            'description' => __( 'Select icon from library.', 'kingcomposer' ),
-                        ),
-                        array(
-                            "type" => "number_slider",
-                            "label" => __("Icon Size", "kingcomposer"),
-                            "name" => "icon_size",
-                            'options' => array(
-                                'min' => 16,
-                                'max' => 300,
-                                'unit' => 'px',
-                                'show_input' => true
-                            ),                        
-                            "value" => 42,
-                            "description" => __("Provide icon size", "kingcomposer"),
-                        ),
-                        
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Icon Color", "kingcomposer" ),
-                            "name"  => "icon_color",
-                            "value"       => "#343434",
-                            "description" => __( "Choose icon color", "kingcomposer" ),
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'icon',
-                            ),
-                        ),                    
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Icon Border Color", "kingcomposer" ),
-                            "name"  => "icon_border_color",
-                            "value"       => "#343434",
-                            "description" => __( "Choose icon border color", "kingcomposer" ),
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'icon',
-                            ),                        
-                        ),
-                       
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Icon Background Color", "kingcomposer" ),
-                            "name"  => "icon_bg_color",
-                            "value"       => "#ffffff",
-                            "description" => __( "Choose icon bg color", "kingcomposer" ),
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'icon',
-                            ),
-                        ),                    
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Icon Hover Color", "kingcomposer" ),
-                            "name"  => "icon_hover_color",
-                            "value"       => "#1293d4",
-                            "description" => __( "Choose icon hover color", "kingcomposer" ),
-                            'relation' => array(
-                                'parent' => 'icon_type',
-                                'show_when' => 'icon',
-                            ),
-                        ),                    
-                                                                 
-                        array(
-                            "type" => "textarea",
-                            "label" => __("Description", "kingcomposer"),
-                            "name" => "content",
-                            "value" => "",
-                            "description" => __("Provide the description for this icon box.", "kingcomposer"),
-                        ),
-                        array(
-                            "type" => "select",
-                            "label" => __("On Click", "kingcomposer"),
-                            "name" => "on_click",
-                            'options' => array(
-                                 'none' => 'No Link',
-                                 'box' => 'Complete Box',
-                            ),
-                            "description" => __("Select whether to use color for icon or not.", "kingcomposer")
-                        ),
-                        array(
-                            "type" => "link",
-                            "label" => __("Add Link", "kingcomposer"),
-                            "name" => "link",
-                            "description" => __("Add a custom link or select existing page. You can remove existing link as well.", "kingcomposer"),
-                            'relation' => array(
-                                'parent' => 'on_click',
-                                'show_when' => 'box',
-                            ),
-                        ),                    
-
-                        array(
-                            "type" => "textfield",
-                            "label" => __("Extra class name", "kingcomposer"),
-                            "name" => "extraclass",
-                            "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", "kingcomposer")
-                        ),
-
-                        */                     
-                        
-                    ),                
-                
-
-/*
-                    
-                    'Typhography' => array(   
-                                         
-                        array(
-                            'type'             => 'number_slider',
-                            'label'          => __( 'Title Font Size', 'kingcomposer' ),
-                            'name'       => 'title_f_size',
-                            'options' => array(
-                                'min' => 5,
-                                'max' => 50,
-                                'unit' => 'px',
-                                'show_input' => true
-                            ),
-                            "value" => 16,
-                            "description" => __("Chose Title Font Size as Pixel. Default is 18px", "kingcomposer"),
-                        ),
-
-                        array(
-                            'type'             => 'number_slider',
-                            'label'          => __( 'Description Font Size', 'kingcomposer' ),
-                            'name'       => 'desc_f_size',
-                            'options' => array(
-                                'min' => 5,
-                                'max' => 50,
-                                'unit' => 'px',
-                                'show_input' => true
-                            ),
-                            "value" => 14,
-                            "description" => __("Chose Description Font Size as Pixel. Default is 14px", "kingcomposer"),
-                        ),
-
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Title color", "kingcomposer" ),
-                            "name"  => "title_color",
-                            "description" => __( "Choose text color", "kingcomposer" ),
-                        ),
-                        array(
-                            "type"        => "color_picker",
-                            "label"     => __( "Description color", "kingcomposer" ),
-                            "name"  => "descr_color",
-                            "description" => __( "Choose text color", "kingcomposer" ),
-                        ),                       
-                     
-                        
-                    ),                    
-
-
-*/
+                    ),
                     
                 )
             )
@@ -350,7 +134,7 @@
                 $output ='';
 
                 //echo $show_first_name;
-                print_r($form_bg);
+                //print_r($form_bg);
                 ob_start(); 
 
                 ?>
@@ -363,8 +147,10 @@
 
 
                 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+
+
                 <style type="text/css">
-                    #mc_embed_signup{background-color:<?php echo $form_bg; ?> !important; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                    #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif; }
                     /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.<br />       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                     .mc-field-group{display:block; width:100%; clear:both;}
                     .mce_inline_error{display:block; width:100%; clear:both;}
@@ -372,10 +158,10 @@
                     #mc_embed_signup .mc-field-group input[type="text"]{color:#000 !important}
                     #mc_embed_signup .mc-field-group input[type = "email"]{color:#000 !important}
                     #mc_embed_signup .mc-field-group{padding-bottom: 0;}
-                    #mc_embed_signup .button{margin-top: 20px; background:<?php echo $btn_bg; ?>; color:<?php echo $btn_color; ?>;}
+                    #mc_embed_signup .button{margin-top: 20px;}
                 </style>
 
-                <div id="mc_embed_signup">
+                <div style="background-color:<?php echo $form_bg; ?> !important;" id="mc_embed_signup">
 
                     <form action="https://sheddingyourexcessweight.us15.list-manage.com/subscribe/post?u=5edf476798c5cfb850e25375d&id=c24dd3d20e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
@@ -413,14 +199,16 @@
                             </div>
                             <p>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--></p>
                             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5edf476798c5cfb850e25375d_c24dd3d20e" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background:<?php echo $btn_bg; ?>; color:<?php echo $btn_color; ?>"></div>
                         </div>
 
                     </form>
 
 
                 </div>
+
                 <script type=&#039;text/javascript&#039; src=&#039;//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js&#039;></script>
+
                 <script type=&#039;text/javascript&#039;>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=&#039;EMAIL&#039;;ftypes[0]=&#039;email&#039;;fnames[1]=&#039;FNAME&#039;;ftypes[1]=&#039;text&#039;;fnames[2]=&#039;LNAME&#039;;ftypes[2]=&#039;text&#039;;}(jQuery));var $mcj = jQuery.noConflict(true);</script>
                 <!--End mc_embed_signup-->
                 <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span>
